@@ -16,4 +16,9 @@ class StatusServices extends Model
      protected $fillable = [
          'name_status_services',
      ];
+
+     //Relacion: 1 status pertenece a uno o varios servicios
+     public function services() {
+        return $this->hasMany(Services::class);
+    }
 }

@@ -16,4 +16,9 @@ class SolicitedServices extends Model
     protected $fillable = [
         'name_solicited_services',
     ];
+
+    //Relacion: 1 tipo de servicio puede ser realizada en una o varios servicios
+    public function services() {
+        return $this->hasMany(Services::class);
+    }
 }

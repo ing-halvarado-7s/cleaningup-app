@@ -24,4 +24,19 @@ class Services extends Model
         'cost_service',
         'personal_service_id',
      ];
+
+     //Relacion: 1 servicio tiene un tipo de servicio
+    public function solicitedServices() {
+        return $this->belongsTo(SolicitedServices::class);
+    }
+
+    //Relacion: 1 servicio tiene un status
+    public function statusServices() {
+        return $this->belongsTo(StatusServices::class);
+    }
+
+    //Relacion: 1 servicio tiene un personal
+    public function personalServices() {
+        return $this->belongsTo(PersonalServices::class);
+    }
 }

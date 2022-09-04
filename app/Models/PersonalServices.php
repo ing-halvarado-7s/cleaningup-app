@@ -17,4 +17,9 @@ class PersonalServices extends Model
         'name_personal_services',
     ];
 
+     //Relacion: 1 personal puede realizar uno o varios servicios
+     public function services() {
+        return $this->hasMany(Services::class);
+    }
+
 }
