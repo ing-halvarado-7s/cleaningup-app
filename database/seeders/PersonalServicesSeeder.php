@@ -16,7 +16,7 @@ class PersonalServicesSeeder extends Seeder
     public function run()
     {
         $names = [
-            'No asignado',
+            'Not assigned',
             'Jennireef Paiva',
             'Jorge Paiva'
         ];

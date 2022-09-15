@@ -16,9 +16,9 @@ class StatusServicesSeeder extends Seeder
     public function run()
     {
         $names = [
-            'Pendiente',
-            'Atendido',
-            'Cancelado'
+            'Pending',
+            'Ready',
+            'Cancelled'
         ];
 
 

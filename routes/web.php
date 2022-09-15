@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',  [InicioController::class, 'index'])->name('inicio.index');
+Route::post('inicio/store', [InicioController::class, 'store'])->name('inicio.store');
 
 Auth::routes();
 
@@ -25,5 +26,5 @@ Route::get('/dash', function () {
 })->name('dash');
 
 Route::group(['middleware' =>['auth']],function () {
-
+    Route::resource('service', ServiceController::class);
 });

@@ -27,16 +27,16 @@ class Services extends Model
 
      //Relacion: 1 servicio tiene un tipo de servicio
     public function solicitedServices() {
-        return $this->belongsTo(SolicitedServices::class);
+        return $this->belongsTo(SolicitedServices::class, 'solicited_service_id');
     }
 
     //Relacion: 1 servicio tiene un status
     public function statusServices() {
-        return $this->belongsTo(StatusServices::class);
+        return $this->belongsTo(StatusServices::class, 'status_service_id');
     }
 
     //Relacion: 1 servicio tiene un personal
     public function personalServices() {
-        return $this->belongsTo(PersonalServices::class);
+        return $this->belongsTo(PersonalServices::class, 'personal_service_id');
     }
 }

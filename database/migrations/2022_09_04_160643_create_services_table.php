@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('date_service')->nullable();
             $table->time('hour_service')->nullable();
             $table->unsignedBigInteger('status_service_id')->default(1);
-            $table->float('cost_service');
+            $table->float('cost_service')->default(0);
             $table->unsignedBigInteger('personal_service_id')->default(1);
             $table->timestamps();
 
