@@ -37,7 +37,17 @@
                         <div class="col-sm">
                             <form action="{{ route('service.index') }}" method="get">
                                 <div class="input-group float-right">
-
+                                    <input type="text" name="name_client" id="name_client" class="form-control" placeholder="Client name">
+                                    <select class="form-control" name="solicited_service_id" id="solicited_service_id">
+                                        <option disabled selected>Solicited service</option>
+                                        @foreach ($solicited as $item)
+                                           @if( $item->id == 1 )
+                                            <option selected value="{{ $item->id}}">{{ $item->name_solicited_services }}</option>
+                                            @else
+                                            <option value="{{ $item->id}}">{{ $item->name_solicited_services }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
                                     <button type="submit" class="btn btn-primary float-right">
                                     <i class="fas fa-search"></i>
                                     </button>

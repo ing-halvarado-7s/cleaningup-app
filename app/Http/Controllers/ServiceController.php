@@ -15,11 +15,16 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $services = Services::paginate(3);
+        dd(is_null($request->solicited_service_id));
 
-        return view('servicio.index',compact('services'));
+        $services = Services::paginate(3);
+        $personal = PersonalServices::all();
+        $solicited =SolicitedServices::all();
+        $status= StatusServices::all();
+
+        return view('servicio.index',compact('services','personal','solicited','status'));
     }
 
     /**
